@@ -1,34 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-class Footer extends Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = { year: new Date().getFullYear() };
-    }
-
-    handleChange(e) {
-        this.setState({ value: e.target.value });
-    }
-
-    render() {
-        return (
-            <footer>
-                <ul className="site-link">
-                    <div className="panel">
-                        <h4>Do you want to buy this artwork? Write us an e-mail!</h4>
-                        <textarea
-                            style={{ width: "100%", height: "100%" }}
-                            onChange={this.handleChange}
-                            defaultValue={this.state.value} />
-                    </div>
-                    <li>
-                        &copy; {this.state.year} Alexandra Caluseri
-                    </li>
-                </ul>
-            </footer>
-        )
-    }
+function Footer() {
+    return (
+        <footer className="mt-5">
+            <Container fluid={true}>
+                <Row className="border-top justify-content-between p-3">
+                    <Col className="p-0" md={3} sd={12}>
+                        &copy; Alexandra Caluseri
+                    </Col>
+                    <Col className="p-0 d-flex justify-content-end" md={3}>
+                        Made by Horatiu Buricea
+                    </Col>
+                </Row>
+            </Container>
+        </footer>
+    )
 }
 
-export default Footer;
+export default Footer;     
